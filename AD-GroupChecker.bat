@@ -14,9 +14,9 @@ echo
 echo                             
 echo.
 echo ##################################################################
-echo Service Desk
 echo.
-echo Benutzergruppenpruefer
+echo                      Benutzergruppenpruefer
+echo.
 echo ##################################################################
 echo.
 
@@ -39,7 +39,7 @@ cmd /c "exit /b 0"
 ver > nul
 set /p gruppe="Bitte die Gruppe eingeben: "
 echo.
-if %gruppe%=="" echo Die Gruppe darf nicht leer sein. && echo. && goto Gruppe
+if %gruppe%=="" echo Die Eingabe darf nicht leer sein. && echo. && goto Gruppe
 echo Bezeichnung:
 net group /domain 2>NUL | findstr /x *%gruppe% && echo. || echo Die Gruppe %gruppe% konnte nicht gefunden werden! && echo. && echo ################################################################## && echo. && goto Gruppe
 
