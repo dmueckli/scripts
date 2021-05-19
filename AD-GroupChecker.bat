@@ -1,6 +1,7 @@
-@echo off
 :: Copyright Dennis Muecklich 2021 
 :: Veröffenticht unter GNU GPL v3
+:: Dieses Script prüft ob ein Benutzer einer Gruppe im Active Directory zugewiesen ist. (quick&dirty)
+@echo off
 echo ##################################################################
 echo.
 echo ___  ____   _      _        
