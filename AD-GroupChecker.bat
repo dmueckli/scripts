@@ -20,24 +20,26 @@ echo.
 echo ##################################################################
 echo.
 
+:: Copyright Dennis Muecklich 2021 
+:: Veröffenticht unter GNU GPL v3
+:: Dieses Script prüft ob ein Benutzer einer Gruppe im Active Directory zugewiesen ist. (quick&dirty)
+@echo off
+
 :Start
 set benutzername=""
 set gruppe=""
 set checker=""
-set funktion = 0
+set funktion== 0
 
-VERIFY > nul
-cmd /c "exit /b 0"
-ver > nul
+set /p funktion=Prüfen ob Benutzer einer Gruppe zugeordnet ist(0, Enter), Gruppensuche(1), Benutzersuche(2) ?
+if %funktion%==0 goto Benutzergruppenpruefer
+if %funktion%==1 goto Gruppensuche
+if %funktion%==2 goto Benutzersuche
 
-set /p funktion=Prüfen ob Benutzer einer Gruppe zugeordnet ist(0) oder Gruppen durchsuchen(1)?
-if %funktion%==0 goto Funktion1
-if %funktion%==1 goto Funktion2
-
-:Funktion1
+:Benutzergruppenpruefer
 set /p benutzername="Bitte den Benutzernamen eingeben: "
 echo.
-if %benutzername%=="" echo Der Benutzername darf nicht leer sein. && echo. && goto Start
+if %benutzername%=="" echo Der Benutzername darf nicht leer sein. && echo. && goto Benutzergruppenpruefer
 net user %benutzername% /domain 2>NUL | findstr %benutzername% && echo. || echo Der Benutzer konnte nicht gefunden werden! && echo. && echo ################################################################## && echo. && goto Start
 
 :Gruppe
@@ -47,8 +49,7 @@ ver > nul
 set /p gruppe="Bitte die Gruppe eingeben: "
 echo.
 if %gruppe%=="" echo Die Eingabe darf nicht leer sein. && echo. && goto Gruppe
-echo Bezeichnung:
-net group /domain 2>NUL | findstr /x *%gruppe% && echo. || echo Die Gruppe %gruppe% konnte nicht gefunden werden! && echo. && echo ################################################################## && echo. && goto Gruppe
+net group /domain 2>NUL | findstr /x *%gruppe% && echo. || echo Die Gruppe %gruppe% konnte nicht gefunden werden! && echo. && echo ################################################################## && echo. && goto Start
 
 echo ##################################################################
 echo.
@@ -62,14 +63,29 @@ echo.
 
 goto Start
 
-:Funktion2
+:Gruppensuche
 VERIFY > nul
 cmd /c "exit /b 0"
 ver > nul
+
 set /p gruppe="Bitte die Gruppe eingeben: "
 echo.
-if %gruppe%=="" echo Die Eingabe darf nicht leer sein. && echo. && goto Funktion2
-echo Bezeichnung:
-net group /domain 2>NUL | findstr *%gruppe% && echo. || echo Die Gruppe %gruppe% konnte nicht gefunden werden! && echo. && echo ################################################################## && echo. && goto Gruppe
+if %gruppe%=="" echo Die Eingabe darf nicht leer sein. && echo. && goto Gruppensuche
+net group /domain 2>NUL | findstr *%gruppe% && echo. || echo Die Gruppe %gruppe% konnte nicht gefunden werden! && echo. && echo ################################################################## && echo. && goto Start
+
+echo ##################################################################
+echo.
+
+:Benutzersuche
+VERIFY > nul
+cmd /c "exit /b 0"
+ver > nul
+
+set /p benutzername="Bitte den Suchbegriff eingeben: "
+echo.
+if %benutzername%=="" echo Der Suchbegriff darf nicht leer sein. && echo. && goto Benutzersuche
+net user /domain 2>NUL | findstr %benutzername% && echo. || echo Der Benutzer konnte nicht gefunden werden! && echo. && echo ################################################################## && echo. && goto Start
+
+goto Start
 
 :Exit
