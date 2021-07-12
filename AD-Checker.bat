@@ -1,17 +1,27 @@
 :: Copyright Dennis Muecklich 2021 
 :: Veröffenticht unter GNU GPL v3
 :: Dieses Script prüft ob ein Benutzer einer Gruppe im Active Directory zugewiesen ist. (quick&dirty)
+:: Version: 1.0
 @echo off
+
 echo ######################################################################
 echo.
-echo                        ___  ____   _      _        
-echo                        |  \/  (_) (_)    | |       
-echo                        | .  . |_   _  ___| | _____ 
-echo                        | |\/| | | | |/ __| |/ / _ \
-echo                        | |  | | |_| | (__|   <  __/
-echo                        \_|  |_/\__,_|\___|_|\_\___|
-echo                             
-echo                             
+echo    DDDDDDDDDDDDD        FFFFFFFFFFFFFFFFFFFFFF        GGGGGGGGGGGGG
+echo    D::::::::::::DDD     F::::::::::::::::::::F     GGG::::::::::::G
+echo    D:::::::::::::::DD   F::::::::::::::::::::F   GG:::::::::::::::G
+echo    DDD:::::DDDDD:::::D  FF::::::FFFFFFFFF::::F  G:::::GGGGGGGG::::G
+echo      D:::::D    D:::::D   F:::::F       FFFFFF G:::::G       GGGGGG
+echo      D:::::D     D:::::D  F:::::F             G:::::G              
+echo      D:::::D     D:::::D  F::::::FFFFFFFFFF   G:::::G              
+echo      D:::::D     D:::::D  F:::::::::::::::F   G:::::G    GGGGGGGGGG
+echo      D:::::D     D:::::D  F:::::::::::::::F   G:::::G    G::::::::G
+echo      D:::::D     D:::::D  F::::::FFFFFFFFFF   G:::::G    GGGGG::::G
+echo      D:::::D     D:::::D  F:::::F             G:::::G        G::::G
+echo      D:::::D    D:::::D   F:::::F              G:::::G       G::::G
+echo    DDD:::::DDDDD:::::D  FF:::::::FF             G:::::GGGGGGGG::::G
+echo    D:::::::::::::::DD   F::::::::FF              GG:::::::::::::::G
+echo    D::::::::::::DDD     F::::::::FF                GGG::::::GGG:::G
+echo    DDDDDDDDDDDDD        FFFFFFFFFFF                   GGGGGG   GGGG
 echo.
 echo ######################################################################
 echo                           Service Desk
