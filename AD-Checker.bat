@@ -6,27 +6,8 @@
 
 echo ######################################################################
 echo.
-echo    DDDDDDDDDDDDD        FFFFFFFFFFFFFFFFFFFFFF        GGGGGGGGGGGGG
-echo    D::::::::::::DDD     F::::::::::::::::::::F     GGG::::::::::::G
-echo    D:::::::::::::::DD   F::::::::::::::::::::F   GG:::::::::::::::G
-echo    DDD:::::DDDDD:::::D  FF::::::FFFFFFFFF::::F  G:::::GGGGGGGG::::G
-echo      D:::::D    D:::::D   F:::::F       FFFFFF G:::::G       GGGGGG
-echo      D:::::D     D:::::D  F:::::F             G:::::G              
-echo      D:::::D     D:::::D  F::::::FFFFFFFFFF   G:::::G              
-echo      D:::::D     D:::::D  F:::::::::::::::F   G:::::G    GGGGGGGGGG
-echo      D:::::D     D:::::D  F:::::::::::::::F   G:::::G    G::::::::G
-echo      D:::::D     D:::::D  F::::::FFFFFFFFFF   G:::::G    GGGGG::::G
-echo      D:::::D     D:::::D  F:::::F             G:::::G        G::::G
-echo      D:::::D    D:::::D   F:::::F              G:::::G       G::::G
-echo    DDD:::::DDDDD:::::D  FF:::::::FF             G:::::GGGGGGGG::::G
-echo    D:::::::::::::::DD   F::::::::FF              GG:::::::::::::::G
-echo    D::::::::::::DDD     F::::::::FF                GGG::::::GGG:::G
-echo    DDDDDDDDDDDDD        FFFFFFFFFFF                   GGGGGG   GGGG
-echo.
-echo ######################################################################
-echo                           Service Desk
-echo.
 echo                      ActiveDirectory Checker
+echo.
 echo ######################################################################
 echo.
 
